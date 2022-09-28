@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>form</title>
+	<style>
+		*{
+			margin:0px;
+			padding: 0px;
+			font-family:Arial, Helvetica, sans-serif;
+			box-sizing: border-box;
+
+		}
+		body{	
+			background: linear-gradient(#e66465, #9198e5);
+			height: 100vh;
+			width: 100%;
+		}
+		.center{
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			background-color: whitesmoke;
+			
+			width: 400px;
+			height: 400px;
+			border-radius: 10px;
+		}
+		.center h1{
+			padding: 0 0 20px 0;
+			
+		}
+		.center form{
+			padding: 0 40px;
+			box-sizing: border-box;
+		}
+		form .txtfield{
+			position: relative;
+			border-bottom: 2px solid silver;
+			margin: 30px 0;
+		}
+		.txtfield input{
+			width:100px;
+			padding: 0 5px;
+			height: 25px;
+			background: none;
+			outline: none;
+			border: none;
+		}
+		.txtfield label{
+			position: absolute;
+			top:50%;
+			left: 5px;
+			color: #9198e5;
+			transform: translateY(-50%);
+			pointer-events: none;
+			transition: .5s;
+		}
+		.txtfield span::before{
+			content: '';
+			position:absolute;
+			top: 40px;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			
+		}
+		.txtfield input:focus ~ label{
+			top: -5px;
+			
+		} 
+		.pass{
+			margin: -5px 0 20px 5px;
+			cursor: pointer;
+			color:#9198e5;
+			text-align: right;
+		}
+		input[type="submit"]{
+		    width: 100%;
+			height: 50px;
+			background: #2691d9;
+			border-radius: 25px;
+			font-size: 18px;
+			color:white;
+			cursor: pointer;
+			font-weight: 700;
+		}
+		input[type="submit"]:hover{
+			background-color: rgb(17, 0, 255);
+			transition: 0.5s;
+		}
+		.sign{
+			margin: 30px 0;
+			text-align: center;
+			font-size: 16px;
+			color: black;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="center">
+		<h1 style="text-align:center">Login</h1>
+		<form action="fetch.php" method="GET">
+			<div class="txtfield">
+				
+				<input type="text" required>
+				<span></span>
+				<label>Username</label>
+			</div>
+			<div class="txtfield">
+				<input type="text" required>
+				<span></span>
+				<label>Password</label>
+			</div>
+			<div class="pass" style="text-align:center"><input type="checkbox">I agree all conditions</div>
+			<div class="pass">Forgot Password?</div>
+			<input type="submit" value="Login" id="btn">
+			<div class="sign">
+				Not a member?<a href="#">Signup</a>
+			</div>
+			
+		</form>
+	</div>
+</body>
+</html>
